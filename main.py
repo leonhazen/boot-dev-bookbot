@@ -1,5 +1,8 @@
 import string
 
+BOOKFILE = './books/frankenstein.txt'
+
+
 def countLetters(text):
     letterCount = {}
     for letter in list(string.ascii_lowercase):
@@ -7,15 +10,15 @@ def countLetters(text):
 
     return letterCount
 
-with open('./books/frankenstein.txt') as f:
+def countWords(text):
+    return len(file_contents.split())
+
+with open(BOOKFILE) as f:
     # Read in book file
     file_contents = f.read()
-    
-    # Split into list of words
-    words = file_contents.split()
-    
+        
     # Print the count of words
-    print('This book has ' + str(len(words)) + ' words.')
+    print('This book has ' + str(countWords(file_contents)) + ' words.')
 
     # Run the countLetters function to create dictionary of letters and their counts
     letterDict = countLetters(file_contents)
